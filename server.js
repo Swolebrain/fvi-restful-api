@@ -6,6 +6,7 @@ var bodyParser = require("body-parser");
 
 
 var app = express();
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(function(req, res, next){
@@ -39,31 +40,11 @@ app.get("/riddles", function(req, res){
 
 //*****************EXERCISE GRADER**********************************//
 var exercises = require('./files/jsproblems.js');
-app.get(["/exercise/:arg1", "/exercises/:arg1"], function(req, res){
-	if (req.params.arg1==="all"){
-		var retVal = [];
-		res.setHeader('Content-Type', 'application/json');
-		for (var i = 0; i < exercises.length; i++){
-			retVal.push({
-				"shortName" : exercises[i].shortName,
-				"url" : exercises[i].url
-			});
-		}
-		res.end(JSON.stringify(  retVal  ) );
-		return;
-	}
-	var index = 0;
-	for (var i = 0; i < exercises.length; i++){
-		if (exercises[i].url === req.params.arg1){
-			index = i;
-			break;
-		}
-	} 
-    var retVal = exercises[i]; 	
-	res.setHeader('Content-Type', 'application/json');
-	res.end(JSON.stringify(retVal));
-});
 
+app.get(["/exercise/:arg1", "/exercises/:arg1"], 
+        require("./routes/getEx.js")(exercises));
+
+app.post("/evaluate", require("./routes/gradeEx.js")(exercises));
 
 
 app.listen(port);
