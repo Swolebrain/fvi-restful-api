@@ -2,7 +2,7 @@ var port = 4004;
 var express = require('express');
 var fs = require('fs');
 var bodyParser = require("body-parser");
-
+var http = require('request');
 
 
 var app = express();
@@ -44,8 +44,11 @@ var exercises = require('./files/jsproblems.js');
 app.get(["/exercise/:arg1", "/exercises/:arg1"], 
         require("./routes/getEx.js")(exercises));
 
-app.post("/evaluate", require("./routes/gradeEx.js")(exercises));
+app.post("/get-results", require("./routes/gradeEx.js")(exercises));
 
+
+//***************************SUDOKU**********************************//
+app.get("/sudoku", require('./routes/sudoku.js')(http));
 
 app.listen(port);
 console.log("Server listening on port "+port);
