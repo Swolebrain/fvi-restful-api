@@ -2,9 +2,9 @@
 module.exports = function(http){
   return function(req,res){
     http.get("http://davidbau.com/generated/sudoku.txt", 
-             function(error, response, body){
+             function(err, response, body){
         if (err)
-          res.status(400).send('Something happened when we tried to get the sudoku puzzle from http://davidbau.com/generated/sudoku.txt x_X');
+        res.status(400).send('Something happened when we tried to get the sudoku puzzle from http://davidbau.com/generated/sudoku.txt x_X');
         res.setHeader('Content-Type', 'application-json');
         res.end(JSON.stringify(loadSudoku(body)));
     });
