@@ -18,7 +18,7 @@ module.exports = function(http){
                  row[22], row[26], row[30], row[34]];
         });
       for (var r = 0; r < rowStrings.length; r++){
-        for (Var c = 0; c < rowStrings.length; c++){
+        for (var c = 0; c < rowStrings.length; c++){
           if (rowStrings[r][c] === " ")
             rowStrings[r][c] = "";
         }
