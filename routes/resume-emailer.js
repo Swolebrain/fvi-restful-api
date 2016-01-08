@@ -10,7 +10,7 @@ service: 'gmail',
     pass:'fvifvifvi!987'
   }
 });
-var mailOptions: {
+var mailOptions = {
 };
 
 module.exports = function(){
