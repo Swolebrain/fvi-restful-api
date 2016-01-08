@@ -15,7 +15,7 @@ var mailOptions = {
 module.exports = function(fs){
   return function(req, res){
     var fromEmail = req.body.from;
-    var htmlPath = req.body.htmlFileName;
+    var htmlFileName = req.body.htmlFileName;
     var dest = req.body.dest_email;
     var subject = req.body.subject;
     
