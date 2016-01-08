@@ -22,7 +22,7 @@ module.exports = function(fs){
     fs.readFile("/root/fvi-restful-api/emails/"+htmlFileName, function(err, data){
       if (err) {
         console.log(err);
-        res.end("Something went wrong when reading your html file");
+        res.end("Something went wrong when reading your html file:\n"+err);
         return;
       }
       mailOptions.from = fromEmail;
@@ -31,8 +31,8 @@ module.exports = function(fs){
       mailOptions.html = data;
       transporter.sendMail(mailOptions, function(error, info){
         if (error){
-          console.log("Something went wrong with sending email");
-          res.end("Something went wrong with sending email");
+          console.log("Something went wrong with sending email - \n"+error);
+          res.end("Something went wrong with sending email\n"+error);
           
         }
         else{
