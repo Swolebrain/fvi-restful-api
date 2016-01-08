@@ -21,6 +21,7 @@ module.exports = function(fs){
     
     fs.readFile(htmlPath, function(err, data){
       if (err) {
+        console.log(err);
         res.end("Something went wrong when reading your html file");
         return;
       }
