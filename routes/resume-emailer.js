@@ -15,11 +15,11 @@ var mailOptions = {
 module.exports = function(fs){
   return function(req, res){
     var fromEmail = req.body.from;
-    var htmlPath = req.body.htmlPath;
+    var htmlPath = req.body.htmlFileName;
     var dest = req.body.dest_email;
     var subject = req.body.subject;
     
-    fs.readFile(htmlPath, function(err, data){
+    fs.readFile("/root/fvi-restful-api/emails/"+htmlFileName, function(err, data){
       if (err) {
         console.log(err);
         res.end("Something went wrong when reading your html file");
