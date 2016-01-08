@@ -50,5 +50,13 @@ app.post("/get-results", require("./routes/gradeEx.js")(exercises));
 //***************************SUDOKU**********************************//
 app.get("/sudoku", require('./routes/sudoku.js')(http));
 
+
+//***************************RESUME EMAILER***************************//
+app.get("/sudoku", require('./routes/resume-emailer.js')(http));
+
+
+
+
+
 app.listen(port);
 console.log("Server listening on port "+port);
