@@ -52,7 +52,7 @@ app.get("/sudoku", require('./routes/sudoku.js')(http));
 
 
 //***************************RESUME EMAILER***************************//
-app.get("/sudoku", require('./routes/resume-emailer.js')(http));
+app.get("/sudoku", require('./routes/resume-emailer.js')(fs));
 
 
 

@@ -1,7 +1,6 @@
 var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
 var wellknown = require('nodemailer-wellknown');
-var fs = require('fs');
 
 var transporter= nodemailer.createTransport({
 service: 'gmail',
@@ -13,7 +12,7 @@ service: 'gmail',
 var mailOptions = {
 };
 
-module.exports = function(){
+module.exports = function(fs){
   return function(req, res){
     var fromEmail = req.body.from;
     var htmlPath = req.body.htmlPath;
