@@ -50,6 +50,8 @@ app.post("/get-results", require("./routes/gradeEx.js")(exercises));
 //***************************SUDOKU**********************************//
 app.get("/sudoku", require('./routes/sudoku.js')(http));
 
+//***************************SUGGESTION BOX**************************//
+app.post('/suggestions', require('./routes/suggestions')());
 
 //***************************RESUME EMAILER***************************//
 app.post("/resume-emailer", require('./routes/resume-emailer.js')(fs));
