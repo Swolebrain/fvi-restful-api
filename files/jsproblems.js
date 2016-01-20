@@ -6,8 +6,10 @@ module.exports = [
     functionHeader: "",
     testResults: "if ( {{x}} === {{y}}){ console.log('YESS!!');}else{console.log('nope');}",
     difficulty: "1",
-    executionContext: {y: parseInt(Math.random()*2),
-                      x: parseInt(Math.random()*2)}
+    executionContext: {
+                  y : "parseInt(Math.random()*2);",
+                      x : "parseInt(Math.random()*2);"
+                  }
   },
   
   {
