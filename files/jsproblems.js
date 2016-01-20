@@ -1,9 +1,20 @@
 module.exports = [
   {
+    url: "string-length",
+    shortName: "String Length",
+    text: "Given a string named x, write a statement which gets its length and assigns it to a variable named y.",
+    functionHeader: "//your answer here",
+    testResults: ["y==={{x}}.length"],
+    difficulty: "1",
+    executionContext: {
+      x : "var func = (n, f) => n>0?f()+func(n-1, f):'';func(Math.random()*15, () => String.fromCharCode( parseInt(Math.random()*26) +65 ));"
+    }
+  },
+  {
     url: "make-decision",
     shortName: "Simple if Statement",
     text: "Write an if statement that tests if the variable named x is equal to {{y}}. If it is, log the string 'YESS!!' to the console. Otherwise, log the string 'nope'.",
-    functionHeader: "",
+    functionHeader: "//your answer here",
     testResults: ["if ( {{x}} === 0 ){ console.log('YESS!!');}else{console.log('nope');}",
                  "if ( {{x}} === 1 ){ console.log('YESS!!');}else{console.log('nope');}",
                  "if ( {{x}} === 2 ){ console.log('YESS!!');}else{console.log('nope');}"],
@@ -18,7 +29,7 @@ module.exports = [
     url: "console-loop",
     shortName: "Loop through range",
     text: "Log the integers in the range {{i}} to {{j}}, inclusive, to the console.",
-    functionHeader: "",
+    functionHeader: "//your answer here",
     testResults: ["for(var x={{i}};x<={{j}};x++)console.log(x);"],
     difficulty: 1,
     executionContext: {i: "Math.round(Math.random()*1000);",
