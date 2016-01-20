@@ -4,7 +4,7 @@ module.exports = [
     shortName: "Simple if Statement",
     text: "Write an if statement that tests if the variable named x is equal to {{y}}. If it is, log the string 'YESS!!' to the console. Otherwise, log the string 'nope'.",
     functionHeader: "",
-    testResults: "if ( {{x}} === {{y}}){ console.log('YESS!!');}else{console.log('nope');}",
+    testResults: ["if ( {{x}} === {{y}} ){ console.log('YESS!!');}else{console.log('nope');}"],
     difficulty: "1",
     executionContext: {
                   y : "parseInt(Math.random()*2);",
