@@ -7,8 +7,8 @@ module.exports = [
     testResults: ["y==='{{x}}'.length"],
     difficulty: "1",
     executionContext: {
-      x : "this.generateString();",
-      generateString: "() => { var func = (n, f) => n>0?f()+func(n-1, f):''; return func(Math.random()*15, () => String.fromCharCode( parseInt(Math.random()*26) +65 ));}"
+      generateString: "() => { var func = (n, f) => n>0?f()+func(n-1, f):''; return func(Math.random()*15, () => String.fromCharCode( parseInt(Math.random()*26) +65 ));}",
+      x : "this.generateString();"
     }
   },
   {
