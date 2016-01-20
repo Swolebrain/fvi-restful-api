@@ -4,7 +4,7 @@ module.exports = [
     shortName: "String Length",
     text: "Given a string named x, write a statement which gets its length and assigns it to a variable named y.",
     functionHeader: "//your answer here",
-    testResults: ["y==={{x}}.length"],
+    testResults: ["y==='{{x}}'.length"],
     difficulty: "1",
     executionContext: {
       x : "var func = (n, f) => n>0?f()+func(n-1, f):'';func(Math.random()*15, () => String.fromCharCode( parseInt(Math.random()*26) +65 ));"
