@@ -1,13 +1,44 @@
 module.exports = [
   {
+    url: "string-sub2",
+    shortName: "String Substring 2",
+    text: "Given a string named x and an int named y, write a statement which gets the substring of x which starts at index y and goes all the way to the end of the string x.",
+    functionHeader: "",
+    testCases: ["var x = 'Aardvarks are aardvarks', y=3;", "var x = 'coding for great good is the greatest good',y = 6",
+               "var x = 'The basement is where neckbeards dwell', y=4;", "var x = 'chi', y=0;"],
+    testResults: ["dvarks are aardvarks", "for great good is the greatest good", 
+                  "asement is where neckbeards dwell", "chi"],
+    difficulty: "1"
+  },
+  {
+    url: "string-sub",
+    shortName: "String Substring",
+    text: "Given a string named x and two ints named n and m, write a statement which gets the substring of x which starts at index n and is m characters in length.",
+    functionHeader: "",
+    testCases: ["var x = 'hello 1234', n = 3, m=3;", "var x = 'hello 1234hello1234', n = 19,m = 1",
+               "var x = '123456789012', n = 0,m=6;", "var x = 'abcdefghi', n = 6,m = 4;"],
+    testResults: ["o 1", "", "123456", "ghi"],
+    difficulty: "1"
+  },
+  {
+    url: "string-position",
+    shortName: "String Character",
+    text: "Given a string named x and an int named n, write a statement which gets the n'th character of the String x.",
+    functionHeader: "",
+    testCases: ["var x = 'hello 1234';var n = 3;", "var x = 'hello 1234hello1234';var n = 19;",
+               "var x = '123456789012';var n = 0;", "var x = 'abcdefghi';var n = 6;"],
+    testResults: ["l", "4", "1", "g"],
+    difficulty: "1"
+  },
+  {
     url: "string-length",
     shortName: "String Length",
     text: "Given a string named x, write a statement which gets its length",
-    functionHeader: "//your answer here",
+    functionHeader: "",
     testCases: ["var x = 'hello 1234';", "var x = 'hello 1234hello1234';",
-               "var x = '123456789012';", "var x = 'abcdefghi';"],
+               "var x = '123456789012';", "var x = '';"],
     testResults: ["10", "20", "12", "8", "0"],
-    difficulty: "1",
+    difficulty: "1"
     /*executionContext: {
       x: "var func = (n, f) => n>0?f()+func(n-1, f):''; '\"'+func(Math.random()*15, () => String.fromCharCode( parseInt(Math.random()*26) +65 ))+'\"'; "
     }*/
@@ -16,7 +47,7 @@ module.exports = [
     url: "make-decision",
     shortName: "Simple if Statement",
     text: "Write an if statement that tests if the variable named x is equal to {{y}}. If it is, log the string 'YESS!!' to the console. Otherwise, log the string 'nope'.",
-    functionHeader: "//your answer here",
+    functionHeader: "",
     testResults: ["if ( {{x}} === {{y}} ){ console.log('YESS!!');}else{console.log('nope');}"],
     difficulty: "1",
     executionContext: {
@@ -29,7 +60,7 @@ module.exports = [
     url: "console-loop",
     shortName: "Loop through range",
     text: "Log the integers in the range {{i}} to {{j}}, inclusive, to the console.",
-    functionHeader: "//your answer here",
+    functionHeader: "",
     testResults: ["for(var x={{i}};x<={{j}};x++)console.log(x);"],
     difficulty: 1,
     executionContext: {i: "Math.round(Math.random()*1000);",
