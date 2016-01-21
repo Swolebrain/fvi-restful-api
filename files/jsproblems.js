@@ -4,11 +4,13 @@ module.exports = [
     shortName: "String Length",
     text: "Given a string named x, write a statement which gets its length",
     functionHeader: "//your answer here",
-    testResults: ["{{x}}.length"],
+    testCases: ["var x = 'hello 1234';", "var x = 'hello 1234hello1234';",
+               "var x = '123456789012';", "var x = 'abcdefghi';"],
+    testResults: ["10", "20", "12", "8", "0"],
     difficulty: "1",
-    executionContext: {
+    /*executionContext: {
       x: "var func = (n, f) => n>0?f()+func(n-1, f):''; '\"'+func(Math.random()*15, () => String.fromCharCode( parseInt(Math.random()*26) +65 ))+'\"'; "
-    }
+    }*/
   },
   {
     url: "make-decision",
