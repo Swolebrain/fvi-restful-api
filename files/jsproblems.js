@@ -4,10 +4,10 @@ module.exports = [
     shortName: "String Substring 2",
     text: "Given a string named x and an int named y, write a statement which gets the substring of x which starts at index y and goes all the way to the end of the string x.",
     functionHeader: "",
-    testCases: ["var x = 'Aardvarks are aardvarks', y=3;", "var x = 'coding for great good is the greatest good',y = 6",
+    testCases: ["var x = 'Aardvarks are aardvarks', y=3;", "var x = 'coding for great good is the greatest good',y = 6;",
                "var x = 'The basement is where neckbeards dwell', y=4;", "var x = 'chi', y=0;"],
     testResults: ["dvarks are aardvarks", "for great good is the greatest good", 
-                  "asement is where neckbeards dwell", "chi"],
+                  "basement is where neckbeards dwell", "chi"],
     difficulty: "1"
   },
   {
@@ -15,9 +15,9 @@ module.exports = [
     shortName: "String Substring",
     text: "Given a string named x and two ints named n and m, write a statement which gets the substring of x which starts at index n and is m characters in length.",
     functionHeader: "",
-    testCases: ["var x = 'hello 1234', n = 3, m=3;", "var x = 'hello 1234hello1234', n = 19,m = 1",
+    testCases: ["var x = 'hello 1234', n = 3, m=3;", "var x = 'hello 1234hello1234', n = 19,m = 1;",
                "var x = '123456789012', n = 0,m=6;", "var x = 'abcdefghi', n = 6,m = 4;"],
-    testResults: ["o 1", "", "123456", "ghi"],
+    testResults: ["lo ", "", "123456", "ghi"],
     difficulty: "1"
   },
   {
@@ -25,7 +25,7 @@ module.exports = [
     shortName: "String Character",
     text: "Given a string named x and an int named n, write a statement which gets the n'th character of the String x.",
     functionHeader: "",
-    testCases: ["var x = 'hello 1234';var n = 3;", "var x = 'hello 1234hello1234';var n = 19;",
+    testCases: ["var x = 'hello 1234';var n = 3;", "var x = 'hello 1234hello1234', n = 18;",
                "var x = '123456789012';var n = 0;", "var x = 'abcdefghi';var n = 6;"],
     testResults: ["l", "4", "1", "g"],
     difficulty: "1"
