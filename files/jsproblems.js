@@ -6,7 +6,7 @@ module.exports = [
     functionHeader: "",
     testCases: ["var x = 'Aardvarks are aardvarks', y=3;", "var x = 'coding for great good is the greatest good',y = 6;",
                "var x = 'The basement is where neckbeards dwell', y=4;", "var x = 'chi', y=0;"],
-    testResults: ["dvarks are aardvarks", "for great good is the greatest good", 
+    testResults: ["dvarks are aardvarks", " for great good is the greatest good", 
                   "basement is where neckbeards dwell", "chi"],
     difficulty: "1"
   },
