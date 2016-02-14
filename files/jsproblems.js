@@ -1,5 +1,61 @@
 module.exports = [
   {
+    url: "object-access-4",
+    shortName: "Unknown Property Name Access 2",
+    text: "Let there be a simple object named kitty of the following form:<br> var kitty = { name: 'Mr. FluffySnuggles' };<br><br>"+
+        "If we ever need to access the 'name' property of kitty, we can type kitty.name. However, if the name of the property is <em>unknown to you</em> at the time you write the code, this will not work.<br><br>"+
+        "For instance, let there be a variable prop which has some string value, for example 'age'. If you want to use prop to give a new value to"+
+        "the property 'age' inside kitty, you can do this:<br><br> kitty[prop] = 5;<br><br>"+
+        "Thus, the statement object[variablename] is equivalent to object.variablevalue. In other words:<br><br>"+
+        "kitty['name'] is the same as kitty.name, and <br>kitty[prop] is the same as kitty['age'], which is the same as kitty.age<br><br>"+
+        "Write a function <em>accessProp</em> which receives an object obj and a string str and returns the value of the property inside obj which has the same name as the value of str.<br><br>"+
+        "For example, if obj is {a: 5}, then a call to accessProp(obj, 'a') should return 5.",
+    functionHeader: "function accessProp(a, b)",
+    testCases: ["accessProp({obj: 5667}, 'obj')", "accessProp({prop1: 48}, 'prop1')", "accessProp({underscore: '___'}, 'underscore')",
+               "accessProp({key: 'value', prop2: 456987321}, 'prop2')", "accessProp({key: 'over 9000'}, 'key')"],
+    testResults: ["5667", "48", "___", "456987321", "over 9000"],
+    difficulty: 2
+  },
+  {
+    url: "object-access-3",
+    shortName: "Unknown Property Name Access",
+    text: "Let there be a simple object named kitty of the following form:<br> var kitty = { name: 'Mr. FluffySnuggles' };<br><br>"+
+        "If we ever need to access the 'name' property of kitty, we can type kitty.name. However, if the name of the property is <em>unknown to you</em> at the time you write the code, this will not work.<br><br>"+
+        "For instance, let there be a variable prop which has some string value, for example 'age'. If you want to use prop to give a new value to"+
+        "the property 'age' inside kitty, you can do this:<br><br> kitty[prop] = 5;<br><br>"+
+        "Thus, the statement object[variablename] is equivalent to object.variablevalue. In other words:<br><br>"+
+        "kitty['name'] is the same as kitty.name, and <br>kitty[prop] is the same as kitty['age'], which is the same as kitty.age<br><br>"+
+        "<strong>Given a variable named y with some unknown string value, write a statement which accesses the property inside x which has the same name as the value of the variable y.",
+    functionHeader: "",
+    testCases: ["var y = 'cookie'; var x = {cookie: 'monster'}", "var y = 'address'; var x = {address: '4846 sweet candy ln'}",
+              "var y = 'name'; var x = {name: 'Pegassus'}", "var y = 'profession'; var x = {profession: 'Gangsta Rapper'}"],
+    testResults: ["monster", "4846 sweet candy ln", "Pegassus", "Gangsta Rapper"],
+    difficulty: 2
+  },
+  {
+    url: "object-access-2",
+    shortName: "Object Method Access",
+    text: "Given an object named dingo of the following form:<br> var dingo = { name: 'Rambunctious Joe', <br> greet: function(){ return 'Hello! How do you do?'; } }; <br><br>"+
+          "Write a statement which <em>calls</em> the method greet of this object x.<br>"+
+          "Remember that in order to call a function, you <em>must</em> write parentheses after the function name, along with any parameters it might take.",
+    functionHeader: "",
+    testCases: ["var dingo = { name: 'Rambunctious Joe', greet: function(){ return 'Hello! How do you do?'; } };",
+               "var dingo = { name: 'Dingo McDingus', greet: function(){ return 'Hooooooowdy Hooooo!'; } };",
+               "var dingo = { name: 'Hamburglar', greet: function(){ return '*disappears into the night*'; } };"],
+    testResults: ['Hello! How do you do?', 'Hooooooowdy Hooooo!', '*disappears into the night*'],
+    difficulty: 1
+  },
+  {
+    url: "object-access",
+    shortName: "Object Property Access",
+    text: "Given an object named x of the following form:<br> var x = { name: 'example name', age: 'example age' }; <br><br>"+
+          "Write a statement which accesses the property 'age' of this object x.",
+    functionHeader: "",
+    testCases: ["var x = { age: '55'}", "var x = { age: '77'}", "var y = 15; var x = { age: y}"],
+    testResults: ["55", "77", "15"],
+    difficulty:1
+  },
+  {
     url: "string-sub2",
     shortName: "String Substring 2",
     text: "Given a string named x and an int named y, write a statement which gets the substring of x which starts at index y and goes all the way to the end of the string x.",
