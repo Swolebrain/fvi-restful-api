@@ -17,7 +17,7 @@ app.use(function(req, res, next){
 
 // ******************QUOTES ***********************************//
 var quotes = require("./files/quotes.js");
-app.post("/quote", function(req, res){
+app.get("/quote", function(req, res){
 	//console.log("Responding on /quotes: ");
 	var quoteVal =  quotes[Math.floor(Math.random()*quotes.length)].split("--");
 	var quote = quoteVal[0];
