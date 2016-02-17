@@ -11,8 +11,8 @@ module.exports = [
         "Write a function <em>accessProp</em> which receives an object obj and a string str and returns the value of the property inside obj which has the same name as the value of str.<br><br>"+
         "For example, if obj is {a: 5}, then a call to accessProp(obj, 'a') should return 5.",
     functionHeader: "function accessProp(a, b)",
-    testCases: ["accessProp({obj: 5667}, 'obj')", "accessProp({prop1: 48}, 'prop1')", "accessProp({underscore: '___'}, 'underscore')",
-               "accessProp({key: 'value', prop2: 456987321}, 'prop2')", "accessProp({key: 'over 9000'}, 'key')"],
+    testCases: ["accessProp({obj: 5667}, 'obj');", "accessProp({prop1: 48}, 'prop1');", "accessProp({underscore: '___'}, 'underscore');",
+               "accessProp({key: 'value', prop2: 456987321}, 'prop2');", "accessProp({key: 'over 9000'}, 'key');"],
     testResults: ["5667", "48", "___", "456987321", "over 9000"],
     difficulty: 2
   },
@@ -27,8 +27,8 @@ module.exports = [
         "kitty['name'] is the same as kitty.name, and <br>kitty[prop] is the same as kitty['age'], which is the same as kitty.age<br><br>"+
         "<strong>Given a variable named y with some unknown string value, write a statement which accesses the property inside x which has the same name as the value of the variable y.",
     functionHeader: "",
-    testCases: ["var y = 'cookie'; var x = {cookie: 'monster'}", "var y = 'address'; var x = {address: '4846 sweet candy ln'}",
-              "var y = 'name'; var x = {name: 'Pegassus'}", "var y = 'profession'; var x = {profession: 'Gangsta Rapper'}"],
+    testCases: ["var y = 'cookie'; var x = {cookie: 'monster'};", "var y = 'address'; var x = {address: '4846 sweet candy ln'};",
+              "var y = 'name'; var x = {name: 'Pegassus'};", "var y = 'profession'; var x = {profession: 'Gangsta Rapper'};"],
     testResults: ["monster", "4846 sweet candy ln", "Pegassus", "Gangsta Rapper"],
     difficulty: 2
   },
