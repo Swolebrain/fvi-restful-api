@@ -1,7 +1,7 @@
 module.exports = [
   {
     url: "object-access-4",
-    shortName: "Unknown Property Name Access 2",
+    shortName: "Unknown Prop Access 2",
     text: "Let there be a simple object named kitty of the following form:<br> var kitty = { name: 'Mr. FluffySnuggles' };<br><br>"+
         "If we ever need to access the 'name' property of kitty, we can type kitty.name. However, if the name of the property is <em>unknown to you</em> at the time you write the code, this will not work.<br><br>"+
         "For instance, let there be a variable prop which has some string value, for example 'age'. If you want to use prop to give a new value to"+
@@ -18,7 +18,7 @@ module.exports = [
   },
   {
     url: "object-access-3",
-    shortName: "Unknown Property Name Access",
+    shortName: "Unknown Prop Access",
     text: "Let there be a simple object named kitty of the following form:<br> var kitty = { name: 'Mr. FluffySnuggles' };<br><br>"+
         "If we ever need to access the 'name' property of kitty, we can type kitty.name. However, if the name of the property is <em>unknown to you</em> at the time you write the code, this will not work.<br><br>"+
         "For instance, let there be a variable prop which has some string value, for example 'age'. If you want to use prop to give a new value to"+
