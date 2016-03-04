@@ -53,9 +53,9 @@ app.get("/sudoku", require('./routes/sudoku.js')(http));
 //***************************SUGGESTION BOX**************************//
 app.post('/suggestions', require('./routes/suggestions')());
 
-//***************************RESUME EMAILER***************************//
+//*****************RESUME EMAILER & CONTACT FORM*********************//
 app.post("/resume-emailer", require('./routes/resume-emailer.js')(fs));
-
+app.post("/email", require('./routes/contact-email.js')(fs));
 
 
 

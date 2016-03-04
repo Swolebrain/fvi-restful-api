@@ -12,6 +12,7 @@ module.exports = function(exercises){
         res.end(JSON.stringify(  retVal  ) );
         return;
     } //end all case
+    //to use this case, send a request to /exercises/$diff-n where n is difficulty
     else if(req.params.arg1.indexOf("$diff") === 0){
       var diff = req.params.arg1.split("-")[1];
       var retVal = exercises.filter( e => e.difficulty===diff );
