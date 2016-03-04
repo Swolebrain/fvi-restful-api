@@ -14,10 +14,12 @@ var mailOptions = {
   subject: 're: Your website'
 };
 
-module.exports = function(fs){
+module.exports = {
+  
+  post: function(fs){
   return function(req, res){
     for (var i in req) console.log(req[i]);
-    var emailBody  "New email from: " + req.body.full_name;     
+    var emailBody = "New email from: " + req.body.full_name;     
     emailBody += "<br>Phone: " + req.body.phone + "<br>Date: "+req.body.ddate+"<br>Time: "+
       req.body.hora+"<br>Email: "+req.body.email+"<br>Message: "+req.body.message;
 
@@ -40,5 +42,12 @@ module.exports = function(fs){
         }
       });
     });
+    
+  },
+  get: function(req, res) {
+      res.end("post the contact form to the /email URL in order to have "+"it     forwarded to the email in the dest_email form field."+
+      "\nVariable names are full_name, phone, ddate, hora, email, message, sub    ject, and the dest_email hidden input.");
+    });
+
   }
 }

@@ -55,7 +55,8 @@ app.post('/suggestions', require('./routes/suggestions')());
 
 //*****************RESUME EMAILER & CONTACT FORM*********************//
 app.post("/resume-emailer", require('./routes/resume-emailer.js')(fs));
-app.post("/email", require('./routes/contact-email.js')(fs));
+app.post("/email", require('./routes/contact-email.js').post(fs));
+app.get("/email", require('./routes/contact-email.js').get);
 
 
 
