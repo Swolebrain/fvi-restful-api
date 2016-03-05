@@ -28,7 +28,7 @@ module.exports = {
       }
       mailOptions.to = req.body.dest_email;
 
-      maiOptions.html = emailBody;
+      mailOptions.html = emailBody;
 
       transporter.sendMail(mailOptions, function(error, info){
         if (error){
