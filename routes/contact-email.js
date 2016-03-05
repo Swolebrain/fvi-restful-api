@@ -45,7 +45,8 @@ module.exports = {
 
   },
   get: function(req, res) {
-      res.end("post the contact form to the /email URL in order to have "+"it     forwarded to the email in the dest_email form field."+
-      "\nVariable names are full_name, phone, ddate, hora, email, message, sub    ject, and the dest_email hidden input.");
+      res.end("post the contact form to the /email URL in order to have "+
+              "it forwarded to the email in the dest_email form field."+
+      "\nVariable names are full_name, phone, ddate, hora, email, message, subject, and the dest_email hidden input.");
     }
 };
