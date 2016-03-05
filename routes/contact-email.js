@@ -17,37 +17,35 @@ var mailOptions = {
 module.exports = {
   
   post: function(fs){
-  return function(req, res){
-    for (var i in req) console.log(req[i]);
-    var emailBody = "New email from: " + req.body.full_name;     
-    emailBody += "<br>Phone: " + req.body.phone + "<br>Date: "+req.body.ddate+"<br>Time: "+
-      req.body.hora+"<br>Email: "+req.body.email+"<br>Message: "+req.body.message;
+    return function(req, res){
+      for (var i in req) console.log(req[i]);
+      var emailBody = "New email from: " + req.body.full_name;     
+      emailBody += "<br>Phone: " + req.body.phone + "<br>Date: "+req.body.ddate+"<br>Time: "+
+        req.body.hora+"<br>Email: "+req.body.email+"<br>Message: "+req.body.message;
 
-    if (req.body.subject){
-      mailOptions.subject = req.body.subject;
-    }
-    mailOptions.to = req.body.dest_email;
-    
-    maiOptions.html = emailBody;
-    
+      if (req.body.subject){
+        mailOptions.subject = req.body.subject;
+      }
+      mailOptions.to = req.body.dest_email;
+
+      maiOptions.html = emailBody;
+
       transporter.sendMail(mailOptions, function(error, info){
         if (error){
           console.log("Something went wrong with sending email - \n"+error);
           res.end("Something went wrong with sending email\n"+error);
-          
+
         }
         else{
           console.log("Message sent "+info.response);
           res.end("Email sent to "+mailOptions.to);
         }
       });
-    });
-    
+    };
+
   },
   get: function(req, res) {
       res.end("post the contact form to the /email URL in order to have "+"it     forwarded to the email in the dest_email form field."+
       "\nVariable names are full_name, phone, ddate, hora, email, message, sub    ject, and the dest_email hidden input.");
-    });
-
-  }
-}
+    }
+};
