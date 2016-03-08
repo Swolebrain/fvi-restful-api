@@ -5,7 +5,7 @@ var questions = [
                   <code>var x = 5;<br>x = x + x*x;<br>
                   var y = "hello";
                   x += y;</code>`,
-  answers: ["An error occurs", "30", "'30hello'", "'hello'"],
+  answers: ["An error occurs", "30", "30hello", "hello"],
   correctAnswerIndex:2},
   {
     id: 1,
@@ -16,7 +16,7 @@ var propName1 = "data";
 var propName2 = "hobby";
 var str = obj[propName1][propName2];
 </code>`,
-    answers: ["'rock'", "'rockin'", "'town'"],
+    answers: ["rock", "rockin", "town"],
     correctAnswerIndex: 1
   },
   {
@@ -26,7 +26,7 @@ var str = obj[propName1][propName2];
 var str = 'Make Donald Drumpf again';
 var drumpf = str.substring(5, 18);
 </code>`,
-    answers: ["'Donald Drumpf'", "'drumpf'", "'Drumpf'"],
+    answers: ["Donald Drumpf", "drumpf", "Drumpf"],
     correctAnswerIndex: 0
   },
   {
@@ -73,7 +73,7 @@ module.exports = {
     var q = questions.filter( e => e.id==reqID?true:false );
     console.log("Got a hit for question "+reqID+", found "+JSON.stringify(q));
     if(q.length > 0){
-      res.setHeader('Content-Type', 'application/json');
+      res.setHeader('Content-Type', 'text/html');
       res.end(JSON.stringify(q[0].answers[q[0].correctAnswerIndex]));
     }
     else
