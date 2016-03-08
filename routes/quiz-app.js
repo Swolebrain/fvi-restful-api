@@ -74,7 +74,7 @@ module.exports = {
     console.log("Got a hit for question "+reqID+", found "+JSON.stringify(q));
     if(q.length > 0){
       res.setHeader('Content-Type', 'application/json');
-      res.end(JSON.stringify(q[0]));
+      res.end(JSON.stringify(q[0].answers[q[0].correctAnswerIndex]));
     }
     else
       res.end("error - question not found");
