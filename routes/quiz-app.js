@@ -70,7 +70,8 @@ module.exports = {
   },
   checkAnswer: function(req,res){
     var reqID = req.params.id;
-    var q = questions.filter( e => e.id===reqID?true:false );
+    var q = questions.filter( e => e.id==reqID?true:false );
+    console.log("Got a hit for question "+reqID+", found "+JSON.stringify(q));
     if(q.length > 0){
       res.setHeader('Content-Type', 'application/json');
       res.end(JSON.stringify(q[0]));
@@ -82,10 +83,9 @@ module.exports = {
     res.end("not supported yet");
   },
   getPostQuestion: function(req,res){
-    res.setHeader('Content-Type', 'application/json');
-    res.end(`The fields to post to '/quiz-question' are:<br>
-questionText: string,<br>
-answers: Array,>br>
+    res.end(`The fields to post to '/quiz-question' are:
+questionText: string,
+answers: Array,
 correctAnswerIndex: 0`);
   }
 };
