@@ -58,7 +58,11 @@ app.post("/resume-emailer", require('./routes/resume-emailer.js')(fs));
 app.post("/email", require('./routes/contact-email.js').post(fs));
 app.get("/email", require('./routes/contact-email.js').get);
 
-
+//*****************QUIZ APP******************************************//
+app.get("/quiz", require('.routes/quiz-app.js').getQuestions);
+app.get("/quiz-get-answer/:id", require('.routes/quiz-app.js').checkAnswer);
+app.post("/quiz-question", require('.routes/quiz-app.js').postQuestion);
+app.get("/quiz-question", require('.routes/quiz-app.js').getPostQuestion);
 
 
 app.listen(port);
