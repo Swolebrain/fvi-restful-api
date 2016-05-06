@@ -34,8 +34,8 @@ var drumpf = str.substring(5, 18);<br>
     questionText: `What is the value of the variable x after the following code executes?<br>
 <code>
 var x = 0;<br>
-var arr = [45,25,10,20,30];
-for (var i =0; i < arr.length; i++)
+var arr = [45,25,10,20,30];<br>
+for (var i =0; i < arr.length; i++)<br>
 &nbsp;&nbsp;&nbsp;&nbsp; x += arr[i];
 </code>`,
     answers: ["0", "30", "130"],
