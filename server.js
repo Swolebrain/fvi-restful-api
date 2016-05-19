@@ -65,7 +65,7 @@ app.post("/quiz-question", require('./routes/quiz-app.js').postQuestion );
 app.get("/quiz-question", require('./routes/quiz-app.js').getPostQuestion );
 
 //*****************CODE CAMP APPLICATION FORM*************************//
-app.post("/ccapply", require('.routes/contact-email.js').ccapply);
+app.post("/ccapply", require('./routes/contact-email.js').ccapply);
 
 app.listen(port);
 console.log("Server listening on port "+port);
