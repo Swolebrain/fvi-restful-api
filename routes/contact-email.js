@@ -9,17 +9,18 @@ service: 'gmail',
     pass:'fvifvifvi!987'
   }
 });
-var mailOptions = {
-  from: 'Contact from your Website <noreply@gmail.com',
-  subject: 're: Your website'
-};
+
 
 module.exports = {
-  
+
   post: function(fs){
+    var mailOptions = {
+      from: 'Contact from your Website <noreply@gmail.com>',
+      subject: 'Your website'
+    };
     return function(req, res){
       for (var i in req) console.log(req[i]);
-      var emailBody = "New email from: " + req.body.full_name;     
+      var emailBody = "New email from: " + req.body.full_name;
       emailBody += "<br>Phone: " + req.body.phone + "<br>Date: "+req.body.ddate+"<br>Time: "+
         req.body.hora+"<br>Email: "+req.body.email+"<br>Message: "+req.body.message;
 
@@ -48,5 +49,34 @@ module.exports = {
       res.end("post the contact form to the /email URL in order to have "+
               "it forwarded to the email in the dest_email form field."+
       "\nVariable names are full_name, phone, ddate, hora, email, message, subject, and the dest_email hidden input.");
+    },
+  ccapply: function(req, res){
+    var html = "";
+    for (var k in req.body){
+      if (req.body.k)
+        html += `<p><strong>${k}:</strong> ${req.body.k}</p>`;
+      else{
+        res.end("error: You must fill out all form fields");
+        return;
+      }
     }
+
+    var mailOptions = {
+      from: req.body.email,
+      subject: 'New application to FVI summer Code Camp',
+      to: 'ofernandez@fvi.edu',
+      html: html
+    };
+    transporter.sendMail(mailOptions, function(error, info){
+      if (error){
+        console.log("Something went wrong with sending email - \n"+error);
+        res.end("error:\n"+error);
+
+      }
+      else{
+        console.log("Message sent "+info.response);
+        res.end("Email sent!");
+      }
+    });
+  }
 };

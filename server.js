@@ -24,15 +24,15 @@ app.get("/quote", function(req, res){
 	var author = quoteVal[1];
 	var topic = quoteVal[2];
 	var obj = { quote: quote, author: author, timeStamp: new Date(), topic: topic };
-	
+
 	res.setHeader('Content-Type', 'application/json');
-	res.end(JSON.stringify(obj));	
+	res.end(JSON.stringify(obj));
 });
 
 var riddles = require("./files/riddles.js");
 //*****************riddle of the day**********************************//
 app.get("/riddles", function(req, res){
-	var theRiddle = riddles[Math.floor(Math.random()*riddles.length)];	
+	var theRiddle = riddles[Math.floor(Math.random()*riddles.length)];
 	console.log("received request for riddle, sending back: "+JSON.stringify(theRiddle));
 	res.setHeader('Content-Type', 'application/json');
 	res.end(JSON.stringify(theRiddle));
@@ -41,7 +41,7 @@ app.get("/riddles", function(req, res){
 //*****************EXERCISE GRADER**********************************//
 var exercises = require('./files/jsproblems.js');
 
-app.get(["/exercise/:arg1", "/exercises/:arg1"], 
+app.get(["/exercise/:arg1", "/exercises/:arg1"],
         require("./routes/getEx.js")(exercises));
 
 app.post("/get-results", require("./routes/gradeEx.js")(exercises));
@@ -64,6 +64,8 @@ app.get("/quiz-get-answer/:id", require('./routes/quiz-app.js').checkAnswer );
 app.post("/quiz-question", require('./routes/quiz-app.js').postQuestion );
 app.get("/quiz-question", require('./routes/quiz-app.js').getPostQuestion );
 
+//*****************CODE CAMP APPLICATION FORM*************************//
+app.post("/ccapply", require('.routes/contact-email.js').ccapply);
 
 app.listen(port);
 console.log("Server listening on port "+port);
