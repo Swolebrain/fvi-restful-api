@@ -53,9 +53,10 @@ module.exports = {
   ccapply: function(req, res){
     var html = "";
     for (var k in req.body){
-      if (req.body.k)
-        html += `<p><strong>${k}:</strong> ${req.body.k}</p>`;
+      if (req.body[k])
+        html += `<p><strong>${k}:</strong> ${req.body[k]}</p>`;
       else{
+        console.log("This is the field that was missing: "+k);
         res.end("error: You must fill out all form fields");
         return;
       }
