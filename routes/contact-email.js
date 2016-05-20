@@ -66,7 +66,7 @@ module.exports = {
     var mailOptions = {
       from: req.body.email,
       subject: 'New application to FVI summer Code Camp',
-      to: 'vmoreno@fvi.edu',
+      to: 'thecodingteacher@gmail.com',
       html: html
     };
     transporter.sendMail(mailOptions, function(error, info){
