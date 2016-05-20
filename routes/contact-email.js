@@ -70,12 +70,12 @@ module.exports = {
     };
     transporter.sendMail(mailOptions, function(error, info){
       if (error){
-        console.log("Something went wrong with sending email - \n"+error);
+        console.log(new Date().toString()+"- Something went wrong with sending email - \n"+error);
         res.end("error:\n"+error);
 
       }
       else{
-        console.log("Message sent "+info.response);
+        console.log(new Date().toString()+"- Message sent "+info.response);
         res.end("Email sent!");
       }
     });
