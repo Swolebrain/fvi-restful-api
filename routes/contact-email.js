@@ -2,13 +2,14 @@ var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
 var wellknown = require('nodemailer-wellknown');
 
-var transporter= nodemailer.createTransport({
+/*var transporter= nodemailer.createTransport({
 service: 'gmail',
   auth:{
     user:'fvialumn@gmail.com',
     pass:'fvifvifvi!987'
   }
-});
+});*/
+var transporter = nodemailer.createTransport('smtps://fvialumn%40gmail.com:fvifvifvi!987@smtp.gmail.com');
 
 
 module.exports = {
