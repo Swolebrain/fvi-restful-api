@@ -20,8 +20,8 @@ module.exports =  {
 }
 
 function validateForm(frm){
-		if ( req.body..length < 3 ||
-		$("#full_name").val().split(" ").length <= 1)
+		if ( frm.full_name.length < 3 ||
+		/*$("#full_name").val().split(" ").length <= 1)
 			return "Please include your full name";
 
 		if (!$("#email").val().match(/^[A-z-_.]{4,50}@[A-z-_.]+\.[A-z]{2,4}$/) )
@@ -35,7 +35,7 @@ function validateForm(frm){
 
 			if (!$("#parent_phone").val().match(/^[( ]*[0-9]{3}[) -]*[0-9]{3}[ -]*[0-9]{4}$/) ||
 						$("#parent_phone").val() === $("#phone").val())
-				return "Please your parent's phone number in the format xxx-xxx-xxxx.";
+				return "Please your parent's phone number in the format xxx-xxx-xxxx.";*/
 
 		return "valid";
 	}
