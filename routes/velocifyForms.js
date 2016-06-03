@@ -20,8 +20,8 @@ module.exports =  {
 }
 
 function validateForm(frm){
-		if ( frm.full_name.length < 3 ||
-		/*$("#full_name").val().split(" ").length <= 1)
+		/*if ( frm.full_name.length < 3 ||
+		$("#full_name").val().split(" ").length <= 1)
 			return "Please include your full name";
 
 		if (!$("#email").val().match(/^[A-z-_.]{4,50}@[A-z-_.]+\.[A-z]{2,4}$/) )
