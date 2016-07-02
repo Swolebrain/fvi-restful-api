@@ -24,8 +24,8 @@ module.exports =  {
 
 function validateForm(frm){
   if (!frm.fname){
-    frm.first_name = frm.fname;
-    frm.last_name = frm.lname;
+    frm.fname = frm.first_name;
+    frm.lname = frm.last_name;
     frm.phone = frm.phone1;
   }
 	if ( frm.fname.length < 2 || frm.lname.length < 2)
