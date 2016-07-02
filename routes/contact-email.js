@@ -50,7 +50,13 @@ module.exports = {
       res.end("post the contact form to the /email URL in order to have "+
               "it forwarded to the email in the dest_email form field."+
       "\nVariable names are full_name, phone, ddate, hora, email, message, subject, and the dest_email hidden input.");
-    },
+  },
+  fakeform: function(req, res){
+    if (!req.query || !req.query.name || !req.query.email || !req.query.phone)
+      res.end("error - please fill out all fields");
+    else 
+      res.end("ok");
+  },
   ccapply: function(req, res){
     var html = "";
     for (var k in req.body){
