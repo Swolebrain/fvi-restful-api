@@ -58,6 +58,9 @@ app.post("/resume-emailer", require('./routes/resume-emailer.js')(fs));
 app.post("/email", require('./routes/contact-email.js').post(fs));
 app.get("/email", require('./routes/contact-email.js').get);
 
+//*****************FAKE FORM FOR FINAL EXAM 1*********************//
+app.post('/fakeform', require('./routes/contact-email.js').fakeform);
+
 //*****************QUIZ APP******************************************//
 app.get("/quiz", require('./routes/quiz-app.js').getQuestions );
 app.get("/quiz-get-answer/:id", require('./routes/quiz-app.js').checkAnswer );
@@ -68,7 +71,8 @@ app.get("/quiz-question", require('./routes/quiz-app.js').getPostQuestion );
 app.post("/ccapply", require('./routes/contact-email.js').ccapply);
 
 //********************LANDING PAGES ********************************//
-app.post('/submitITform', require('./routes/velocifyForms.js').itcampaign1(http));
+app.post('/submitITform', require('./routes/velocifyForms.js').itcampaign1(http, "https://secure.velocify.com/Import.aspx?Provider=LandingPageB&Client=30010&CampaignId=1087"));
+app.post('/submittechfviform', require('./routes/velocifyForms.js').itcampaign1(http, "https://secure.velocify.com/Import.aspx?Provider=FVI&Client=30010&CampaignId=1025"));
 
 app.listen(port);
 console.log("Server listening on port "+port);

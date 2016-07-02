@@ -1,12 +1,12 @@
 module.exports =  {
-  itcampaign1: function(request){
+  itcampaign1: function(request, campaignUrl){
     return function(req, res){
       var frmResult = validateForm(req.body);
       if ( frmResult != "valid"){
         res.end(frmResult);
         return;
       }
-      request.post("https://secure.velocify.com/Import.aspx?Provider=LandingPageB&Client=30010&CampaignId=1087",
+      request.post(campaignUrl,
         {form: req.body },
         function(error, xhr, resp){
           if (error){
