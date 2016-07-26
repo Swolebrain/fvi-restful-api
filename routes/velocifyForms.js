@@ -1,3 +1,18 @@
+var nodemailer = require('nodemailer');
+var smtpTransport = require('nodemailer-smtp-transport');
+var wellknown = require('nodemailer-wellknown');
+
+var transporter= nodemailer.createTransport({
+service: 'gmail',
+  auth:{
+    user:'fvialumn@gmail.com',
+    pass:'fvifvifvi!987'
+  }
+});
+var mailOptions = { from: "noreply@fvi-grad.com",
+          to: "thecodingteacher@gmail.com"
+  };
+
 module.exports =  {
   itcampaign1: function(request, campaignUrl){
     return function(req, res){
@@ -11,12 +26,23 @@ module.exports =  {
         function(error, xhr, resp){
           if (error){
             console.log(error);
+            mailOptions.subject = "Form submission from techhire/overtown";
+            mailOptions.html = "This form was NOT posted to velocify"+
+                            JSON.stringify(req.body, null, 4);
+
             res.end(error);
           }
           else {
             console.log(resp);
+            mailOptions.subject = "Form submission from techhire/overtown";
+            mailOptions.html = "This form was successfully posted to velocify"+
+                            JSON.stringify(req.body, null, 4);
             res.end(resp);
           }
+          transporter.sendMail(mailOptions, function(error2, info){
+            if (error2) console.log("Error sending mail for "+JSON.stringify(req.body));
+            else console.log("Sent mail on behalf of techhire/overtown");
+          });
         });
     };
   }
