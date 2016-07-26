@@ -24,24 +24,25 @@ module.exports =  {
       request.post(campaignUrl,
         {form: req.body },
         function(error, xhr, resp){
+          var resText;
           if (error){
-            console.log(error);
             mailOptions.subject = "Form submission from techhire/overtown";
             mailOptions.html = "This form was NOT posted to velocify"+
                             JSON.stringify(req.body, null, 4);
 
-            res.end(error);
+            resText = error;
           }
           else {
-            console.log(resp);
             mailOptions.subject = "Form submission from techhire/overtown";
             mailOptions.html = "This form was successfully posted to velocify"+
                             JSON.stringify(req.body, null, 4);
-            res.end(resp);
+            resText = resp;
           }
           transporter.sendMail(mailOptions, function(error2, info){
             if (error2) console.log("Error sending mail for "+JSON.stringify(req.body));
             else console.log("Sent mail on behalf of techhire/overtown");
+            console.log(resText);
+            res.end(resText);
           });
         });
     };
