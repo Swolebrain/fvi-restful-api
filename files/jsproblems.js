@@ -10,7 +10,7 @@ module.exports = [
         "kitty['name'] is the same as kitty.name, and <br>kitty[prop] is the same as kitty['age'], which is the same as kitty.age<br><br>"+
         "Write a function <em>accessProp</em> which receives an object obj and a string str and returns the value of the property inside obj which has the same name as the value of str.<br><br>"+
         "For example, if obj is {a: 5}, then a call to accessProp(obj, 'a') should return 5.",
-    functionHeader: "function accessProp(a, b){\n\t\n}",
+    functionHeader: "function accessProp(a, b){\n    \n}",
     testCases: ["accessProp({obj: 5667}, 'obj');", "accessProp({prop1: 48}, 'prop1');", "accessProp({underscore: '___'}, 'underscore');",
                "accessProp({key: 'value', prop2: 456987321}, 'prop2');", "accessProp({key: 'over 9000'}, 'key');"],
     testResults: ["5667", "48", "___", "456987321", "over 9000"],
