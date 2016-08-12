@@ -175,7 +175,7 @@ module.exports = [
     text: "Write a function that, given two non-negative integers x and y, returns the number of bits set to 0 in the binary representation of the number x*y. For example, given x = 3 and y = 3 the function should return 4, because the binary representation of 3^3 = 27 is 11011 and it contains four bits set to 1. Assume that x and y are integers within the range 0 to 10,000. Hint, if phi is a variable of type number, then phi.toString(2) will return a string representation of the binary form of phi.",
     functionHeader: "function binExp(x, y){\n    \n}",
     testCases: ['binExp(3,3);', 'binExp(4,4);', 'binExp(5, 7);', 'binExp(9,4);'],
-    testResults: [4, 1, 8, 6],
+    testResults: [2, 1, 3, 2],
     difficulty: "5",
 
   },
