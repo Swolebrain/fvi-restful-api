@@ -10,7 +10,7 @@ module.exports = [
         "kitty['name'] is the same as kitty.name, and <br>kitty[prop] is the same as kitty['age'], which is the same as kitty.age<br><br>"+
         "Write a function <em>accessProp</em> which receives an object obj and a string str and returns the value of the property inside obj which has the same name as the value of str.<br><br>"+
         "For example, if obj is {a: 5}, then a call to accessProp(obj, 'a') should return 5.",
-    functionHeader: "function accessProp(a, b)",
+    functionHeader: "function accessProp(a, b){\n\t\n}",
     testCases: ["accessProp({obj: 5667}, 'obj');", "accessProp({prop1: 48}, 'prop1');", "accessProp({underscore: '___'}, 'underscore');",
                "accessProp({key: 'value', prop2: 456987321}, 'prop2');", "accessProp({key: 'over 9000'}, 'key');"],
     testResults: ["5667", "48", "___", "456987321", "over 9000"],
@@ -62,7 +62,7 @@ module.exports = [
     functionHeader: "",
     testCases: ["var x = 'Aardvarks are aardvarks', y=3;", "var x = 'coding for great good is the greatest good',y = 6;",
                "var x = 'The basement is where neckbeards dwell', y=4;", "var x = 'chi', y=0;"],
-    testResults: ["dvarks are aardvarks", " for great good is the greatest good", 
+    testResults: ["dvarks are aardvarks", " for great good is the greatest good",
                   "basement is where neckbeards dwell", "chi"],
     difficulty: "1"
   },
@@ -111,7 +111,7 @@ module.exports = [
                       x : "parseInt(Math.random()*3);"
                   }
   },
-  
+
   {
     url: "console-loop",
     shortName: "Loop through range",
@@ -203,7 +203,7 @@ module.exports = [
 		shortName: "Name Validator",
 		text: "Write a function which validates a Name form input. It should only allow letters, apostrophes, spaces, and dashes. It should return false if the name is invalid, or true otherwise.",
 		functionHeader: "function validateName(str){\n    \n}",
-		testCases: ["validateName('Amar\\\'e');", "validateName('Jamal!');", "validateName('Jean-Louis');", 
+		testCases: ["validateName('Amar\\\'e');", "validateName('Jamal!');", "validateName('Jean-Louis');",
 					"validateName('Papo44');", "validateName('Acere');", "validateName('Mamita...');"],
 		testResults: [true, false, true, false, true, false],
 		difficulty: 2
@@ -247,7 +247,7 @@ module.exports = [
 			"[\\''Nutzz\\'', \\''1001\\'', \\''Deez\\'', \\''1003\\'', \\''1004\\'', \\''DeezNutzz\\'']",
 			"[\\''14\\'', \\''DeezNutzz\\'', \\''16\\'', \\''17\\'', \\''Deez\\'', \\''19\\'']"
 		],
-		difficulty: 5 
+		difficulty: 5
 	},
 
 	{
@@ -258,7 +258,7 @@ module.exports = [
 		testCases: ["twoTwo([2, 2, 4, 2]);", "twoTwo([1, 3, 4]);", "twoTwo([1, 2, 2, 3, 4]);",
 				"twoTwo([]);", "twoTwo([2, 2, 7, 2, 1]);" ],
 		testResults:[ false, true, true, true, false ] ,
-		difficulty: 3 
+		difficulty: 3
 	}
 
 	/*{
@@ -268,7 +268,7 @@ module.exports = [
 		functionHeader: ,
 		testCases: ,
 		testResults: ,
-		difficulty: 
+		difficulty:
 	},*/
 
 ];
