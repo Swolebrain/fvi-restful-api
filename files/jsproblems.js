@@ -36,7 +36,7 @@ module.exports = [
     url: "object-access-2",
     shortName: "Object Method Access",
     text: "Given an object named dingo of the following form:<br> var dingo = { name: 'Rambunctious Joe', <br> greet: function(){ return 'Hello! How do you do?'; } }; <br><br>"+
-          "Write a statement which <em>calls</em> the method greet of this object x.<br>"+
+          "Write a statement which <em>calls</em> the method greet of this object.<br>"+
           "Remember that in order to call a function, you <em>must</em> write parentheses after the function name, along with any parameters it might take.",
     functionHeader: "",
     testCases: ["var dingo = { name: 'Rambunctious Joe', greet: function(){ return 'Hello! How do you do?'; } };",
@@ -68,7 +68,7 @@ module.exports = [
   },
   {
     url: "string-sub",
-    shortName: "String Substring",
+    shortName: "String Substr",
     text: "Given a string named x and two ints named n and m, write a statement which gets the substring of x which starts at index n and is m characters in length.",
     functionHeader: "",
     testCases: ["var x = 'hello 1234', n = 3, m=3;", "var x = 'hello 1234hello1234', n = 19,m = 1;",
@@ -91,9 +91,9 @@ module.exports = [
     shortName: "String Length",
     text: "Given a string named x, write a statement which gets its length",
     functionHeader: "",
-    testCases: ["var x = 'hello 1234';", "var x = 'hello 1234hello1234';",
+    testCases: ["var x = 'hello 1234';", "var x = 'hello 1234hello1234 ';",
                "var x = '123456789012';", "var x = '';"],
-    testResults: ["10", "20", "12", "8", "0"],
+    testResults: ["10", "20", "12", "0"],
     difficulty: "1"
     /*executionContext: {
       x: "var func = (n, f) => n>0?f()+func(n-1, f):''; '\"'+func(Math.random()*15, () => String.fromCharCode( parseInt(Math.random()*26) +65 ))+'\"'; "
