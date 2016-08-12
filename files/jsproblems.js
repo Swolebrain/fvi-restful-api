@@ -165,7 +165,7 @@ module.exports = [
     text: "The map method of arrays receives a function as a parameter and applies that function to every element of the array, returning a new array where the elements are the result of applying the mapped function to each element of the old array. For instance, [1,2,5].map(function(elem){ return elem+5; }) produces the array [6,7,10] because the map function received a function which just increments the element by 5. Write a function squareAll which receives an array of numbers (you may assume they are numbers) and returns a new array where each element is the square of the corresponding index in the original array. ",
     functionHeader: "function squareAll(bingo){\n    \n}",
     testCases: ['squareAll([1,1]);', 'squareAll([2,2,5]);', 'squareAll([6,7,8,9]);', 'squareAll([11,10,20,30]);'],
-    testResults: ['1,1', '4,4,25', '36,49,64,81', '121,100,400,900]' ],
+    testResults: ['1,1', '4,4,25', '36,49,64,81', '121,100,400,900' ],
     difficulty: "2",
 
   },
