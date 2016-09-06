@@ -87,7 +87,7 @@ var Sudoku = function(data)
 };
 
 module.exports = function(req, res){
-  var userBoard = req.body.board;
+  var userBoard = req.body.board.map(row=>row.map(cell=>Number(cell)));
   console.log(req.body.board);
   try {
     var sud = new Sudoku(userBoard);
