@@ -89,8 +89,14 @@ var Sudoku = function(data)
 module.exports = function(req, res){
   var userBoard = req.body.board;
   console.log(req.body.board);
-  var sud = new Sudoku(userBoard);
-  var valid = sud.isValid();
-  if (valid) res.end("valid");
-  else res.end("invalid");
+  try {
+    var sud = new Sudoku(userBoard);
+    var valid = sud.isValid();
+    if (valid) res.end("valid");
+    else res.end("invalid");
+  }
+  catch(e){
+    res.end(e.message);
+  }
+
 };
