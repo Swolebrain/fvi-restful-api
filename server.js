@@ -49,6 +49,7 @@ app.post("/get-results", require("./routes/gradeEx.js")(exercises));
 
 //***************************SUDOKU**********************************//
 app.get("/sudoku", require('./routes/sudoku.js')(http));
+app.post("/sudoku", require('./routes/sudoku-validator.js'));
 
 //***************************SUGGESTION BOX**************************//
 app.post('/suggestions', require('./routes/suggestions')());
