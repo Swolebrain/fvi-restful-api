@@ -54,7 +54,7 @@ module.exports = {
   fakeform: function(req, res){
     if (!req.query || !req.query.name || !req.query.email || !req.query.phone)
       res.end("error - please fill out all fields");
-    else 
+    else
       res.end("ok");
   },
   ccapply: function(req, res){
@@ -84,6 +84,36 @@ module.exports = {
       else{
         console.log(new Date().toString()+"- Message sent "+info.response);
         res.end("Email sent!");
+      }
+    });
+  },
+  guide : function(req, res){
+    var html = "";
+    for (var k in req.body){
+      if (req.body[k])
+        html += `<p><strong>${k}:</strong> ${req.body[k]}</p>`;
+      else{
+        console.log("This is the field that was missing: "+k);
+        res.end("error: You must fill out all form fields");
+        return;
+      }
+    }
+
+    var mailOptions = {
+      from: req.body.email,
+      subject: 'New Request for WD guide',
+      to: 'thecodingteacher@gmail.com',
+      html: html
+    };
+    transporter.sendMail(mailOptions, function(error, info){
+      if (error){
+        console.log(new Date().toString()+"- Something went wrong with sending email - \n"+error);
+        res.end("error:\n"+error);
+
+      }
+      else{
+        console.log(new Date().toString()+"- Message sent "+info.response);
+        res.sendFile(__dirname+"/files/2016_guide.pdf");
       }
     });
   }
