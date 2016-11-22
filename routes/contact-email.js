@@ -114,7 +114,7 @@ module.exports = {
       }
       else{
         console.log(new Date().toString()+"- Message sent "+info.response);
-        res.sendFile(__dirname+"/files/2016_guide.pdf");
+        res.sendFile("../files/2016_guide.pdf");
       }
     });
   }
