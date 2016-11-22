@@ -6,6 +6,7 @@ var http = require('request');
 
 
 var app = express();
+app.set("abspath", __dirname);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -58,7 +59,7 @@ app.post('/suggestions', require('./routes/suggestions')());
 app.post("/resume-emailer", require('./routes/resume-emailer.js')(fs));
 app.post("/email", require('./routes/contact-email.js').post(fs));
 app.get("/email", require('./routes/contact-email.js').get);
-app.post("/guide", require('./routes/contact-email.js').guide);
+app.post("/guide", require('./routes/contact-email.js').guide(app));
 app.get("/guide", function(req, res){res.send("You need a post request")});
 
 //*****************FAKE FORM FOR FINAL EXAM 1*********************//

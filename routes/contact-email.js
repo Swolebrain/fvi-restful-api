@@ -87,35 +87,37 @@ module.exports = {
       }
     });
   },
-  guide : function(req, res){
-    console.log("Received a request for a guide!\n"+JSON.stringify(req.body));
-    var html = "";
-    for (var k in req.body){
-      if (req.body[k])
-        html += `<p><strong>${k}:</strong> ${req.body[k]}</p>`;
-      else{
-        console.log("This is the field that was missing: "+k);
-        res.end("error: You must fill out all form fields");
-        return;
+  guide : function(app){
+    return function(req, res){
+      console.log("Received a request for a guide!\n"+JSON.stringify(req.body));
+      var html = "";
+      for (var k in req.body){
+        if (req.body[k])
+          html += `<p><strong>${k}:</strong> ${req.body[k]}</p>`;
+        else{
+          console.log("This is the field that was missing: "+k);
+          res.end("error: You must fill out all form fields");
+          return;
+        }
       }
+
+      var mailOptions = {
+        from: req.body.email,
+        subject: 'New Request for WD guide',
+        to: 'thecodingteacher@gmail.com',
+        html: html
+      };
+      transporter.sendMail(mailOptions, function(error, info){
+        if (error){
+          console.log(new Date().toString()+"- Something went wrong with sending email - \n"+error);
+          res.end("error:\n"+error);
+
+        }
+        else{
+          console.log(new Date().toString()+"- Message sent "+info.response);
+          res.sendFile(app.get("abspath")+"/files/2016_guide.pdf");
+        }
+      });
     }
-
-    var mailOptions = {
-      from: req.body.email,
-      subject: 'New Request for WD guide',
-      to: 'thecodingteacher@gmail.com',
-      html: html
-    };
-    transporter.sendMail(mailOptions, function(error, info){
-      if (error){
-        console.log(new Date().toString()+"- Something went wrong with sending email - \n"+error);
-        res.end("error:\n"+error);
-
-      }
-      else{
-        console.log(new Date().toString()+"- Message sent "+info.response);
-        res.sendFile("../files/2016_guide.pdf");
-      }
-    });
   }
 };
