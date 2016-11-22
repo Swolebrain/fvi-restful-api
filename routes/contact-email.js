@@ -88,6 +88,7 @@ module.exports = {
     });
   },
   guide : function(req, res){
+    console.log("Received a request for a guide!\n"+JSON.stringify(req.body));
     var html = "";
     for (var k in req.body){
       if (req.body[k])
