@@ -59,6 +59,7 @@ app.post("/resume-emailer", require('./routes/resume-emailer.js')(fs));
 app.post("/email", require('./routes/contact-email.js').post(fs));
 app.get("/email", require('./routes/contact-email.js').get);
 app.post("/guide", require('./routes/contact-email.js').guide);
+app.get("/guide", function(req, res){res.send("You need a post request")});
 
 //*****************FAKE FORM FOR FINAL EXAM 1*********************//
 app.post('/fakeform', require('./routes/contact-email.js').fakeform);
