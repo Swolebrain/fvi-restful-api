@@ -17,6 +17,7 @@ module.exports = function(fs){
     var htmlFileName = req.body.html_file_name;
     var dest = req.body.dest_email;
     var subject = req.body.subject;
+    console.log("Request to send an email: "+JSON.stringify(req.body));
 
     fs.readFile(htmlFileName, function(err, data){
       if (err) {
