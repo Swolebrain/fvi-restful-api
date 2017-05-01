@@ -87,6 +87,42 @@ module.exports = {
       }
     });
   },
+  genericForm: function(app, subject, receiver){
+    return function(req, res){
+      console.log("Received request for genericForm endpoint");
+      var html = "";
+      //if (!req.body.dest_email) res.status(400).send("You need a dest_email");
+      for (var k in req.body){
+        if (typeof req.body[k] !== 'undefined'){
+          html += `<p><strong>${k}:</strong> ${req.body[k]}</p>`;
+        }
+        else{
+          console.log("This is the field that was missing: "+k);
+          res.end("error: You must fill out all form fields");
+          return;
+        }
+      }
+      console.log("Built html: "+html);
+      var mailOptions = {
+        from: req.body.email,
+        subject: subject,
+        to: receiver,
+        //cc: 'bcartaya@fvi.edu',
+        html: html
+      };
+      transporter.sendMail(mailOptions, function(error, info){
+        if (error){
+          console.log(new Date().toString()+"- Something went wrong with sending email - \n"+error);
+          res.json({error: error});
+
+        }
+        else{
+          console.log(new Date().toString()+"- Message sent "+info.response);
+          res.json({status: 'success', info: info})
+        }
+      });
+    }
+  },
   guide : function(app){
     return function(req, res){
       console.log("Received a request for a guide!\n"+JSON.stringify(req.body));

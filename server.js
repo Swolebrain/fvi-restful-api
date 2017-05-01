@@ -62,6 +62,11 @@ app.get("/email", require('./routes/contact-email.js').get);
 app.post("/guide", require('./routes/contact-email.js').guide(app));
 app.get("/guide", function(req, res){res.send("You need a post request")});
 
+//*****************ONLINE AVOCATIONAL ENROLLMENT*********************//
+app.post("/enrollment", require('./routes/contact-email.js')
+		.genericForm(app,'New enrollment to FVI Avocational Program', 'vmoreno@fvi.edu'));
+
+
 //*****************FAKE FORM FOR FINAL EXAM 1*********************//
 app.post('/fakeform', require('./routes/contact-email.js').fakeform);
 
