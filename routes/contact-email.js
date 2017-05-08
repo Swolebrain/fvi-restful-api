@@ -98,7 +98,7 @@ module.exports = {
         }
         else{
           console.log("This is the field that was missing: "+k);
-          res.end("error: You must fill out all form fields");
+          res.json({error: "You must fill out all form fields"});
           return;
         }
       }
