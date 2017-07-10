@@ -18,6 +18,7 @@ module.exports =  {
     return function(req, res){
       console.log("Received request to send email through velocifyFors.itcampaign1:");
       console.log(JSON.stringify(req.body));
+      console.log(JSON.stringify(req.query));
       var frmResult = validateForm(req.body);
       if ( frmResult != "valid"){
         res.end(frmResult);
