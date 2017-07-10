@@ -10,7 +10,7 @@ service: 'gmail',
   }
 });
 var mailOptions = { from: "noreply@fvi-grad.com",
-          to: "thecodingteacher@gmail.com"
+          to: "vmoreno@fvi.edu"
   };
 
 module.exports =  {
@@ -33,8 +33,8 @@ module.exports =  {
             resText = error;
           }
           else {
-            mailOptions.subject = "Form submission from techhire/overtown";
-            mailOptions.html = "This form was successfully posted to velocify"+
+            mailOptions.subject = "Form submission from an FVI web property";
+            mailOptions.html = "This form was successfully posted to velocify, using campaign "+ campaignUrl + "\n"
                             JSON.stringify(req.body, null, 4);
             resText = resp;
           }
