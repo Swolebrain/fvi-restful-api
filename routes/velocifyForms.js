@@ -42,7 +42,7 @@ module.exports =  {
           }
           transporter.sendMail(mailOptions, function(error2, info){
             if (error2) console.log("Error sending mail for "+JSON.stringify(req.body));
-            else console.log("Sent mail on behalf of "+campaignUrl": "+JSON.stringify(req.body));
+            else console.log("Sent mail on behalf of "+campaignUrl+": "+JSON.stringify(req.body));
             console.log(resText);
             res.end(resText);
           });
