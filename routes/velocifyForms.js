@@ -37,7 +37,7 @@ module.exports =  {
           }
           else {
             mailOptions.subject = "Form submission from an FVI web property";
-            mailOptions.html = "This form was successfully posted to velocify, using campaign "+ campaignUrl + "\n"
+            mailOptions.html = "This form was successfully posted to velocify, using campaign "+ campaignUrl + "\n" + 
                             JSON.stringify(req.body, null, 4);
             resText = resp;
           }
