@@ -16,6 +16,8 @@ var mailOptions = { from: "noreply@fvi-grad.com",
 module.exports =  {
   itcampaign1: function(request, campaignUrl){
     return function(req, res){
+      console.log("Received request to send email through velocifyFors.itcampaign1:");
+      console.log(JSON.stringify(req.body));
       var frmResult = validateForm(req.body);
       if ( frmResult != "valid"){
         res.end(frmResult);
