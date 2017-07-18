@@ -87,6 +87,27 @@ module.exports = {
       }
     });
   },
+  assessment1: function(req, res){
+    var html = JSON.stringify(req.body, null, 4);
+    console.log("Got a request for assessment 1");
+    var mailOptions = {
+      from: req.body.email,
+      subject: 'New Entrance Exam Completed',
+      to: 'vmoreno@fvi.edu',
+      html: html
+    };
+    transporter.sendMail(mailOptions, function(error, info){
+      if (error){
+        console.log(new Date().toString()+"- Something went wrong with sending email - \n"+error);
+        res.end("error:\n"+error);
+
+      }
+      else{
+        console.log(new Date().toString()+"- Message sent "+info.response);
+        res.end("Email sent!");
+      }
+    });
+  },
   genericForm: function(app, subject, receiver){
     return function(req, res){
       console.log("Received request for genericForm endpoint");

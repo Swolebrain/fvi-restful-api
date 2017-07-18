@@ -76,6 +76,9 @@ app.get("/quiz-get-answer/:id", require('./routes/quiz-app.js').checkAnswer );
 app.post("/quiz-question", require('./routes/quiz-app.js').postQuestion );
 app.get("/quiz-question", require('./routes/quiz-app.js').getPostQuestion );
 
+//*****************CODING ASSESSMENT********************************//
+app.get("/assessment1", require('./routes/contact-email').assessment1);
+
 //*****************CODE CAMP APPLICATION FORM*************************//
 app.post("/ccapply", require('./routes/contact-email.js').ccapply);
 

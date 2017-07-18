@@ -1,0 +1,33 @@
+{
+  "name": "fvi-restful-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "fs": "^0.0.2",
+    "node-mysql": "^0.4.2",
+    "nodemailer": "^2.4.1",
+    "nodemailer-wellknown": "^0.1.7",
+    "nodemailer-smtp-transport": "^2.0.0",
+    "request": "^2.67.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "push": "git add . && git commit && git push origin master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Swolebrain/fvi-restful-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Swolebrain/fvi-restful-api/issues"
+  },
+  "homepage": "https://github.com/Swolebrain/fvi-restful-api#readme"
+}
