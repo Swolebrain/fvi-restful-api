@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(function(req, res, next){
 	res.header("Access-Control-Allow-Origin", "*");
+	res.header('Access-Control-Allow-Headers', "Content-Type")
 	next();
 });
 
@@ -84,7 +85,7 @@ app.post("/ccapply", require('./routes/contact-email.js').ccapply);
 
 //********************LANDING PAGES ********************************//
 app.post('/submitITform', require('./routes/velocifyForms.js').itcampaign1(http, "https://secure.velocify.com/Import.aspx?Provider=LandingPageB&Client=30010&CampaignId=1087"));
-app.post('/submittechfviform', require('./routes/velocifyForms.js').itcampaign1(http, "https://secure.velocify.com/Import.aspx?Provider=FVI&Client=30010&CampaignId=1025"));
+app.post('/submittechfviform', require('./routes/velocifyForms.js').itcampaign1(http, "https://secure.velocify.com/Import.aspx?Provider=FVI&Client=30010&CampaignId=1093"));
 
 app.listen(port);
 console.log("Server listening on port "+port);

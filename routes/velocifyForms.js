@@ -10,12 +10,15 @@ service: 'gmail',
   }
 });
 var mailOptions = { from: "noreply@fvi-grad.com",
-          to: "thecodingteacher@gmail.com"
+          to: "vmoreno@fvi.edu"
   };
 
 module.exports =  {
   itcampaign1: function(request, campaignUrl){
     return function(req, res){
+      console.log("Received request to send email through velocifyFors.itcampaign1:");
+      console.log(JSON.stringify(req.body));
+      console.log(JSON.stringify(req.query));
       var frmResult = validateForm(req.body);
       if ( frmResult != "valid"){
         res.end(frmResult);
@@ -33,14 +36,14 @@ module.exports =  {
             resText = error;
           }
           else {
-            mailOptions.subject = "Form submission from techhire/overtown";
-            mailOptions.html = "This form was successfully posted to velocify"+
+            mailOptions.subject = "Form submission from an FVI web property";
+            mailOptions.html = "This form was successfully posted to velocify, using campaign "+ campaignUrl + "\n" + 
                             JSON.stringify(req.body, null, 4);
             resText = resp;
           }
           transporter.sendMail(mailOptions, function(error2, info){
             if (error2) console.log("Error sending mail for "+JSON.stringify(req.body));
-            else console.log("Sent mail on behalf of techhire/overtown: "+JSON.stringify(req.body));
+            else console.log("Sent mail on behalf of "+campaignUrl+": "+JSON.stringify(req.body));
             console.log(resText);
             res.end(resText);
           });
